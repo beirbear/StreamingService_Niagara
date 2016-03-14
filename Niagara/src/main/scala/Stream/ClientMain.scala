@@ -4,9 +4,6 @@ import akka.actor.Actor
 import akka.actor.ActorSystem
 import akka.actor.Props
 
-/**
-  * Created by beir on 2/24/16.
-  */
 object ClientMain extends App {
 
   val system = ActorSystem("ClientSystem")

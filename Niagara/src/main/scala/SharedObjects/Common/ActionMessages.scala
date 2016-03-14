@@ -8,5 +8,5 @@ object ActionMessage {
 }
 
 object Parameters {
-  val TOTAL_DUMMY_RECORDS = 1000000
+  val TOTAL_DUMMY_RECORDS = 4000
 }

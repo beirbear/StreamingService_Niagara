@@ -1,5 +1,6 @@
 package Stream.StreamEngine
 
+import SharedObjects.Calculation.FeatureCreation
 import akka.actor.Actor
 
 class StreamMain extends Actor {
@@ -15,7 +16,10 @@ class StreamMain extends Actor {
   def runSampleDataStream(): Unit = {
     import Stream.StreamEngine.DataPlugin.DummySource
     val dataSource = new DummySource()
-    val data = dataSource.getData(100)
-    println(data(0).mkString(", "))
+    val data = dataSource.getData(1)
+
+    // Calculate feature extraction
+    data.addCalculation("proteinSum", "protein", FeatureCreation.calculateSumRow)
+    println(data.calculations("proteinSum").length)
   }
 }
